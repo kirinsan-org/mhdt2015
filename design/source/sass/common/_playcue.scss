@@ -9,15 +9,6 @@
 }
 
 
-.button {
-	@include transform(scale(1));
-	@include transition(transform 0.1s ease-out 0s);
-	&:active {
-		@include transform(scale(0.90));
-	}	
-}
-
-
 $beatballSize : 4px;
 $cellColor : #FFF;
 	
@@ -138,16 +129,17 @@ $cellColor : #FFF;
 #artwork {
 	width:100%;
 	height:100%;
-	background-color: #000;
-
+	
 	#artwork-background {
 		width:110%;
 		height:110%;
-		margin:0 -5%;
+		margin:-5%;
 		background-size: cover;
+		
 		background-position: center middle;
 		-webkit-filter: blur(5px); -moz-filter: blur(5px); -o-filter: blur(5px); -ms-filter: blur(5px); filter: blur(5px);
 		opacity:0.5;
+		background-color: #000!important;
 	}
 
 

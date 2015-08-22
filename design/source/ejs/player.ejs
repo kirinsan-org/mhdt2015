@@ -1,83 +1,139 @@
 <%= include elements/_header %>
 <div class="container" id="player">
 	
-<div id="nearby">
-	<ul id="nearby-users">
-		<li>
-			<div class="avatar"><img src="http://lorempixel.com/128/128/cats/1/" ></div>
+	<div id="nearby">
+		<ul id="nearby-users">
+			<li>
+				<div class="avatar"><img src="http://lorempixel.com/128/128/cats/1/" ></div>
+				<div class="beatball" style="animation-duration : 3s;"></div>
+			</li>
+			<li class="red">
+				<div class="avatar"><img src="http://lorempixel.com/128/128/cats/2/" ></div>
+				<div class="beatball" style="animation-duration : 4s;"></div>
+			</li>
+			<li class="blue">
+				<div class="avatar"><img src="http://lorempixel.com/128/128/cats/3/" ></div>
+				<div class="beatball" style="animation-duration : 2s;"></div>
+			</li>
+			<li class="green">
+				<div class="avatar"><img src="http://lorempixel.com/128/128/cats/4/" ></div>
+				<div class="beatball" style="animation-duration : 3.5s;"></div>
+			</li>
+			<li class="orange">
+				<div class="avatar"><img src="http://lorempixel.com/128/128/cats/5/" ></div>
+				<div class="beatball" style="animation-duration : 2.2s;"></div>
+			</li>
+			<li>
+				<div class="avatar"><img src="http://lorempixel.com/128/128/cats/6/" ></div>
+				<div class="beatball" style="animation-duration : 2.3s;"></div>
+			</li>
+			<li>
+				<div class="avatar"><img src="http://lorempixel.com/128/128/cats/7/" ></div>
+				<div class="beatball" style="animation-duration : 2s;"></div>
+			</li>
+			<li>
+				<div class="avatar"><img src="http://lorempixel.com/128/128/cats/8/" ></div>
+				<div class="beatball" style="animation-duration : 2.1s;"></div>
+			</li>
+			<li>
+				<div class="avatar"><img src="http://lorempixel.com/128/128/cats/9/" ></div>
+				<div class="beatball" style="animation-duration : 3.5s;"></div>
+			</li>
+			<li>
+				<div class="avatar"><img src="http://lorempixel.com/128/128/cats/10/" ></div>
+				<div class="beatball" style="animation-duration : 3s;"></div>
+			</li>
+		</ul>
+	</div>
+
+	<div id="artwork" >
+		<div id="artwork-image"><img src="images/sample_wondefulrush.jpg" alt=""></div>
+		<div id="artwork-background" style="background-image:url(images/sample_wondefulrush.jpg)" >
+			
+		</div>
+	</div>
+
+	<div id="control">
+		<div id="control-skip" class="button"></div>
+		<div id="control-prev" class="button"></div>
+		<div id="control-playpause" class="button">
 			<div class="beatball" style="animation-duration : 3s;"></div>
-		</li>
-		<li class="red">
-			<div class="avatar"><img src="http://lorempixel.com/128/128/cats/2/" ></div>
-			<div class="beatball" style="animation-duration : 4s;"></div>
-		</li>
-		<li class="blue">
-			<div class="avatar"><img src="http://lorempixel.com/128/128/cats/3/" ></div>
-			<div class="beatball" style="animation-duration : 2s;"></div>
-		</li>
-		<li class="green">
-			<div class="avatar"><img src="http://lorempixel.com/128/128/cats/4/" ></div>
-			<div class="beatball" style="animation-duration : 3.5s;"></div>
-		</li>
-		<li class="orange">
-			<div class="avatar"><img src="http://lorempixel.com/128/128/cats/5/" ></div>
-			<div class="beatball" style="animation-duration : 2.2s;"></div>
+		</div>
+		<div class="display-time" id="time-current">00:00:00</div>
+		<div class="display-time" id="time-destination">00:00:00</div>
+		<div id="timeline">
+			<div id="timeline-knob"></div>
+		</div>
+
+		<div id="song-data">
+			<div id="song-title">Wonderful Rush</div>
+			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div id="song-artists">μ's / ラブライブ!</div>
+		</div>
+
+	</div>
+
+</div>
+
+<div class="container" id="playcue">
+	<ul id="playcue-list">
+		<li>
+			<div id="song-title">Wonderful Rush</div>
+			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div id="song-artists">μ's / ラブライブ!</div>
 		</li>
 		<li>
-			<div class="avatar"><img src="http://lorempixel.com/128/128/cats/6/" ></div>
-			<div class="beatball" style="animation-duration : 2.3s;"></div>
+			<div id="song-title">Wonderful Rush</div>
+			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div id="song-artists">μ's / ラブライブ!</div>
 		</li>
 		<li>
-			<div class="avatar"><img src="http://lorempixel.com/128/128/cats/7/" ></div>
-			<div class="beatball" style="animation-duration : 2s;"></div>
+			<div id="song-title">Wonderful Rush</div>
+			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div id="song-artists">μ's / ラブライブ!</div>
 		</li>
 		<li>
-			<div class="avatar"><img src="http://lorempixel.com/128/128/cats/8/" ></div>
-			<div class="beatball" style="animation-duration : 2.1s;"></div>
+			<div id="song-title">Wonderful Rush</div>
+			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div id="song-artists">μ's / ラブライブ!</div>
 		</li>
 		<li>
-			<div class="avatar"><img src="http://lorempixel.com/128/128/cats/9/" ></div>
-			<div class="beatball" style="animation-duration : 3.5s;"></div>
+			<div id="song-title">Wonderful Rush</div>
+			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div id="song-artists">μ's / ラブライブ!</div>
 		</li>
 		<li>
-			<div class="avatar"><img src="http://lorempixel.com/128/128/cats/10/" ></div>
-			<div class="beatball" style="animation-duration : 3s;"></div>
+			<div id="song-title">Wonderful Rush</div>
+			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div id="song-artists">μ's / ラブライブ!</div>
+		</li>
+		<li>
+			<div id="song-title">Wonderful Rush</div>
+			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div id="song-artists">μ's / ラブライブ!</div>
+		</li>
+		<li>
+			<div id="song-title">Wonderful Rush</div>
+			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div id="song-artists">μ's / ラブライブ!</div>
+		</li>
+		<li>
+			<div id="song-title">Wonderful Rush</div>
+			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div id="song-artists">μ's / ラブライブ!</div>
+		</li>
+		<li>
+			<div id="song-title">Wonderful Rush</div>
+			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div id="song-artists">μ's / ラブライブ!</div>
 		</li>
 	</ul>
 </div>
-
-<div id="artwork" >
-	<div id="artwork-image"><img src="images/sample_wondefulrush.jpg" alt=""></div>
-	<div id="artwork-background" style="background-image:url(images/sample_wondefulrush.jpg)" >
-		
-	</div>
-</div>
-
-<div id="control">
-	<div id="control-skip" class="button"></div>
-	<div id="control-prev" class="button"></div>
-	<div id="control-playpause" class="button">
-		<div class="beatball" style="animation-duration : 3s;"></div>
-	</div>
-	<div class="display-time" id="time-current">00:00:00</div>
-	<div class="display-time" id="time-destination">00:00:00</div>
-	<div id="timeline">
-		<div id="timeline-knob"></div>
-	</div>
-
-	<div id="song-data">
-		<div id="song-title">Wonderful Rush</div>
-		<div id="song-album-title">Wonderful Rush (Hi-res)</div>
-		<div id="song-artists">μ's / ラブライブ!</div>
-	</div>
-
-</div>
-
 
 <script>
 	$("#control-playpause").on("click",function(){
 		$(this).toggleClass("isPause");
 	})
 </script>
-</div>
+
 <%= include elements/_footer %>
