@@ -8,10 +8,22 @@
 
 $themeColor : #FFC900;
 
-$defaultButtonSize : 48px;
+$defaultButtonSize: 48px;
+$nearbyBarPadding:4px;
+$nearbyBarCellMargin:6px;
 
 @import '_player';
 
+body,html {
+	width:100%;
+	height:100%;
+}
 
-.container {}
+body {
+	background-color: #000;
+}
+
+.container {
+	height:100%;
+}
 

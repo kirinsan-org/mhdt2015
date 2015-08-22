@@ -46,25 +46,36 @@
 	</ul>
 </div>
 
-<div id="artwork">
-	
-</div>
-
-<div id="song-data">
-	
+<div id="artwork" >
+	<div id="artwork-image"><img src="images/sample_wondefulrush.jpg" alt=""></div>
+	<div id="artwork-background" style="background-image:url(images/sample_wondefulrush.jpg)" >
+		
+	</div>
 </div>
 
 <div id="control">
 	<div id="control-skip" class="button"></div>
 	<div id="control-prev" class="button"></div>
-	<div id="control-playpause" class="button isPaused"></div>
-	<div class="display-time" id="time-current"></div>
-	<div class="display-time" id="time-destination">
-		<div id="timeline">
-			<div id="timeline-knob"></div>
-		</div>
+	<div id="control-playpause" class="button"></div>
+	<div class="display-time" id="time-current">00:00:00</div>
+	<div class="display-time" id="time-destination">00:00:00</div>
+	<div id="timeline">
+		<div id="timeline-knob"></div>
 	</div>
+
+	<div id="song-data">
+		<div id="song-title">Wonderful Rush</div>
+		<div id="song-album-title">Wonderful Rush (Hi-res)</div>
+		<div id="song-artists">μ's / ラブライブ!</div>
+	</div>
+
 </div>
 
+
+<script>
+	$("#control-playpause").on("click",function(){
+		$(this).toggleClass("isPause");
+	})
+</script>
 </div>
 <%= include elements/_footer %>

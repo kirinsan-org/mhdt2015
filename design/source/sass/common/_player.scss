@@ -12,17 +12,22 @@
 #nearby-users {
 
 	$cellSize : $defaultButtonSize;
-	$padding : 6px;
-	$margin : 4px;
+	$padding : $nearbyBarPadding;
+	$margin : $nearbyBarCellMargin;
 	
 	$beatballSize : 4px;
 	
 	$cellColor : #FFF;
+	position: absolute;
+	top:0;
+	
+	z-index:20;
 	
 	padding:$padding;
 	letter-spacing:-0.5em;
-	background-color: #333;
+	background-color: rgba(0,0,0,0.5);
 	
+	width:100%;
 	height:$cellSize + $margin*2;
 	overflow: hidden;
 
@@ -122,14 +127,89 @@
 	}
 }
 
+#artwork {
+	width:100%;
+	height:100%;
+	#artwork-background {
+		width:110%;
+		height:110%;
+		margin:-5%;
+		-webkit-background-size: cover;
+		     -o-background-size: cover;
+		        background-size: cover;
+		background-position: center middle;
+		-webkit-filter: blur(5px); -moz-filter: blur(5px); -o-filter: blur(5px); -ms-filter: blur(5px); filter: blur(5px);
+		opacity:0.5;
+	}
+
+
+	#artwork-image {
+		$artworkSize : 300px;
+		width:$artworkSize;
+		height:$artworkSize;
+		margin:$artworkSize*-.5;
+		position: absolute;
+		top:48%;left:50%;
+		z-index:10;
+		img {
+			width:100%;
+			box-shadow:0 0px 12px rgba(0,0,0,0.5);
+		}
+	}
+}
+
 
 #control {
+
+	$barHeight : $defaultButtonSize + $nearbyBarPadding + $nearbyBarCellMargin;
+	
 	display: block;
 	position: fixed;
 	bottom:0;
-	background-color: #333;
+	background-color: rgba(0,0,0,0.5);
 	width:100%;
-	height:48px;
+	height:$barHeight;
+	
+	#timeline {
+		$timelineWidth: 2px;
+		width:100%;
+		height:$timelineWidth;
+		position: absolute;
+		top:$timelineWidth*-1;
+		background-color: $themeColor;
+		
+		#timeline-knob {
+			$knobSize : $timelineWidth*4;
+			width:$knobSize;
+			height:$knobSize;
+			position: absolute;
+			top:50%;
+			margin:$knobSize*-0.5 0;
+			-webkit-border-radius: $knobSize;
+			        border-radius: $knobSize;
+			background-color: $themeColor;
+		}
+	}
+
+	.display-time {
+		position: absolute;
+		font-family:"Helvetica";
+		top:-22px;
+		color:#FFF;
+		font-size:11px;
+		
+		&#time-current {
+			left:8px;
+			text-align:left;
+		}
+		
+		&#time-destination {
+			right:8px;
+			text-align:right;
+		}
+		
+	}
+	
 	#control-playpause {
 		$playButtonSize : $defaultButtonSize * 1.2;
 		position: relative;
@@ -137,8 +217,46 @@
 		height:$playButtonSize;
 		margin:0 $playButtonSize*-0.5;
 		left:50%;
-		bottom:50px;
+		top:$playButtonSize*-1 - 14px;
 		border-radius:$playButtonSize*0.5;
  		background-color: $themeColor;
+ 		
+ 		background-image: url(../images/ui_play_pause.png);
+ 		background-position:center top;
+ 		background-size: cover;
+ 		
+ 		@include transition(background-position 0.15s cubic-bezier(0.64, 0.57, 0.67, 1.53) 0s);
+ 		
+ 		&.isPause {
+ 			background-position: center bottom;
+ 		}
+
+ 		&.isPlay {
+ 			background-position: center bottom;
+ 		}
 	}
+
+	#song-data {
+		position: absolute;
+		font-family:"Helvetica",sans-serif;
+		top: 0;
+		color: #FFF;
+		font-size:16px;
+		line-height:1.04em;
+		padding:6px 12px;
+		
+
+		#song-album-title ,
+		#song-artists {
+			font-size:11px;
+		}
+
+		#song-album-title {
+
+		}
+		#song-artists {
+
+		}
+	}
+
 }
