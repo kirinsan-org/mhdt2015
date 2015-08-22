@@ -1,0 +1,144 @@
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); } 
+}
+@-webkit-keyframes rotate {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+
+#nearby-users {
+
+	$cellSize : $defaultButtonSize;
+	$padding : 6px;
+	$margin : 4px;
+	
+	$beatballSize : 4px;
+	
+	$cellColor : #FFF;
+	
+	padding:$padding;
+	letter-spacing:-0.5em;
+	background-color: #333;
+	
+	height:$cellSize + $margin*2;
+	overflow: hidden;
+
+	
+	li {
+		width:$cellSize;
+		height:$cellSize;
+		margin:$margin;
+		display: inline-block;
+		position: relative;
+		letter-spacing:normal;
+		
+		-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+		
+		border:1px solid $cellColor;
+		border-radius:$cellSize;
+		
+		.avatar {
+			width:100%;
+			height:100%;
+			border-radius:128px;
+			overflow: hidden;
+		}
+		
+		.beatball {
+			width:100%;
+			height:100%;
+			position: absolute;
+			top:0;left:0;
+			
+			animation-name: rotate ;
+			animation-duration : 2s;
+			animation-iteration-count: infinite;  
+			animation-timing-function: linear;
+			-webkit-animation-name: rotate ;
+			animation-duration : 2s;
+			-webkit-animation-iteration-count: infinite;
+			animation-timing-function: linear;
+			
+			&:before {
+				content:"";
+				display: block;
+				width:$beatballSize;
+				height:$beatballSize;
+				margin:$beatballSize*-0.5;
+				background-color: $cellColor;
+				box-shadow:0 0 4px $cellColor;
+				opacity:0.8;
+				position: absolute;
+				border-radius:8px;
+				top:50%;
+				left:-1px;
+			}
+		}
+		img {
+			width:100%;
+		}
+		
+	}
+
+	li.red {
+		$cellColor:#CE0E17;
+		border-color:$cellColor;
+		.beatball:before {
+				background-color: $cellColor;
+				box-shadow:0 0 4px $cellColor;
+		}
+	}
+
+	li.blue {
+		$cellColor:#2E46E8;
+		border-color:$cellColor;
+		.beatball:before {
+				background-color: $cellColor;
+				box-shadow:0 0 4px $cellColor;
+		}
+	}
+
+	li.orange {
+		$cellColor:#B56419;
+		border-color:$cellColor;
+		.beatball:before {
+				background-color: $cellColor;
+				box-shadow:0 0 4px $cellColor;
+		}
+	}
+
+	li.green {
+		$cellColor:#226F19;
+		border-color:$cellColor;
+		.beatball:before {
+				background-color: $cellColor;
+				box-shadow:0 0 4px $cellColor;
+		}
+	}
+}
+
+
+#control {
+	display: block;
+	position: fixed;
+	bottom:0;
+	background-color: #333;
+	width:100%;
+	height:48px;
+	#control-playpause {
+		$playButtonSize : $defaultButtonSize * 1.2;
+		position: relative;
+		width:$playButtonSize;
+		height:$playButtonSize;
+		margin:0 $playButtonSize*-0.5;
+		left:50%;
+		bottom:50px;
+		border-radius:$playButtonSize*0.5;
+ 		background-color: $themeColor;
+	}
+}

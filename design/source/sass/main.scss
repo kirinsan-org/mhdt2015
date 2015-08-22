@@ -6,4 +6,12 @@
 @import 'compass/reset';
 @import 'compass/css3';
 
+$themeColor : #FFC900;
+
+$defaultButtonSize : 48px;
+
+@import '_player';
+
+
+.container {}
 
