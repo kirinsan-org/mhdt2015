@@ -9,15 +9,56 @@
 }
 
 
+.button {
+	@include transform(scale(1));
+	@include transition(transform 0.1s ease-out 0s);
+	&:active {
+		@include transform(scale(0.90));
+	}	
+}
+
+
+$beatballSize : 4px;
+$cellColor : #FFF;
+	
+.beatball {
+	
+	width:100%;
+	height:100%;
+	position: absolute;
+	top:0;left:0;
+	
+	animation-name: rotate ;
+	animation-duration : 2s;
+	animation-iteration-count: infinite;  
+	animation-timing-function: linear;
+	-webkit-animation-name: rotate ;
+	animation-duration : 2s;
+	-webkit-animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	
+	&:before {
+		content:"";
+		display: block;
+		width:$beatballSize;
+		height:$beatballSize;
+		margin:$beatballSize*-0.5;
+		background-color: $cellColor;
+		box-shadow:0 0 4px $cellColor;
+		opacity:0.8;
+		position: absolute;
+		border-radius:8px;
+		top:50%;
+		left:-1px;
+	}
+}
+
 #nearby-users {
 
 	$cellSize : $defaultButtonSize;
 	$padding : $nearbyBarPadding;
 	$margin : $nearbyBarCellMargin;
 	
-	$beatballSize : 4px;
-	
-	$cellColor : #FFF;
 	position: absolute;
 	top:0;
 	
@@ -54,36 +95,7 @@
 			overflow: hidden;
 		}
 		
-		.beatball {
-			width:100%;
-			height:100%;
-			position: absolute;
-			top:0;left:0;
-			
-			animation-name: rotate ;
-			animation-duration : 2s;
-			animation-iteration-count: infinite;  
-			animation-timing-function: linear;
-			-webkit-animation-name: rotate ;
-			animation-duration : 2s;
-			-webkit-animation-iteration-count: infinite;
-			animation-timing-function: linear;
-			
-			&:before {
-				content:"";
-				display: block;
-				width:$beatballSize;
-				height:$beatballSize;
-				margin:$beatballSize*-0.5;
-				background-color: $cellColor;
-				box-shadow:0 0 4px $cellColor;
-				opacity:0.8;
-				position: absolute;
-				border-radius:8px;
-				top:50%;
-				left:-1px;
-			}
-		}
+		
 		img {
 			width:100%;
 		}
@@ -202,28 +214,50 @@
 			left:8px;
 			text-align:left;
 		}
-		
+
 		&#time-destination {
 			right:8px;
 			text-align:right;
 		}
+
+	}
+	
+
+	#control-skip ,
+	#control-prev ,
+	#control-playpause {
+		position: absolute;
+		background-color: $themeColor;
+ 		background-position:center top;
+ 		background-size: cover;
+	}
+	
+	#control-skip ,#control-prev {
+		width:$defaultButtonSize;
+		height:$defaultButtonSize;
+		margin:0 $defaultButtonSize*-0.5;
+		border-radius:$defaultButtonSize;
+		top:$defaultButtonSize*-1 - 20px;
+	}
+	#control-skip {
+		right:30%;
+		background-image: url(../images/ui_skip.png);
+	}
+	#control-prev {
 		
+		left:30%;
+		background-image: url(../images/ui_rewind.png);
 	}
 	
 	#control-playpause {
 		$playButtonSize : $defaultButtonSize * 1.2;
-		position: relative;
 		width:$playButtonSize;
 		height:$playButtonSize;
 		margin:0 $playButtonSize*-0.5;
 		left:50%;
 		top:$playButtonSize*-1 - 14px;
 		border-radius:$playButtonSize*0.5;
- 		background-color: $themeColor;
- 		
  		background-image: url(../images/ui_play_pause.png);
- 		background-position:center top;
- 		background-size: cover;
  		
  		@include transition(background-position 0.15s cubic-bezier(0.64, 0.57, 0.67, 1.53) 0s);
  		
@@ -234,6 +268,15 @@
  		&.isPlay {
  			background-position: center bottom;
  		}
+
+ 		.beatball:before {
+ 				width:8px;
+ 				height:8px;
+ 				opacity:1;
+				background-color: $themeColor;
+				box-shadow:0 0 4px $themeColor;
+		}
+
 	}
 
 	#song-data {
@@ -244,7 +287,6 @@
 		font-size:16px;
 		line-height:1.04em;
 		padding:6px 12px;
-		
 
 		#song-album-title ,
 		#song-artists {
@@ -252,11 +294,14 @@
 		}
 
 		#song-album-title {
-
+			
 		}
 		#song-artists {
-
+			
 		}
 	}
 
+	.playcue-opened & {
+		
+	}
 }
