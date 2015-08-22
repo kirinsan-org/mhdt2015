@@ -1,0 +1,77 @@
+.container {
+    &#searchmusic{
+    	bottom:0;
+        overflow:hidden;
+        height:0;
+        background-color:rgba(0,0,0,0.8);
+        color:#FFF;
+        
+        &.searchmusic-opened{
+            height:100%;
+        }
+    }
+}
+
+#searchmusic-container {
+    overflow:scroll;
+    height:100%;
+}
+
+#searchmusic-form {
+    background-color: #333;
+    padding:8px;
+    input{
+        font-size: 20px;
+        height: 32px;
+        border: none;
+        padding: 8px 0;
+        text-indent: 8px;
+        width: 100%;
+        border-radius: 4px;
+        display: block;
+    }
+}
+
+#searchmusic-list {
+    li {
+        border-bottom:1px solid rgba(255,255,255,0.4);
+        padding:8px;
+        font-size:14px;
+        
+        line-height:1.1em;
+        height:45px;
+        padding-left :55px;
+        position: relative;
+        .song-album-title ,
+        .song-artists {font-size:11px;}
+        .song-artwork {
+            width:45px;height:45px;
+            top:5px;left:5px;
+            position: absolute;
+            img {width:100%;}
+        }
+
+        &:after{
+            content:"";
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            display: block;
+            background-size: contain;
+        }
+        
+        &.soundcloud:after{
+            background-image:url("../images/icon_soundcloud.png")
+        }
+        &.recochoku:after{
+            background-image:url("../images/icon_rekochoku.png")
+        }
+        &.spotify:after{
+            background-image:url("../images/icon_spotify.png")
+        }
+
+    }
+}

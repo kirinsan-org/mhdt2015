@@ -1,0 +1,58 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import 'compass/reset';
+@import 'compass/css3';
+
+$themeColor : #FFC900;
+
+$defaultButtonSize: 48px;
+$nearbyBarPadding:4px;
+$nearbyBarCellMargin:6px;
+
+@import '_player';
+@import '_playcue';
+@import '_searchmusic';
+
+body,html {
+	width:100%;
+	height:100%;
+}
+
+body {
+	background-color: #FFF;	
+	font-family:sans-serif;
+}
+
+.button {
+	@include transform(scale(1));
+	@include transition(transform 0.1s ease-out 0s);
+	&:active {
+		@include transform(scale(0.90));
+	}	
+}
+
+.container {
+	position: absolute;
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+    left: 0;
+    
+    &#player {
+    	z-index:20;
+    }
+
+    &#playcue {
+    	z-index:10;
+    }
+
+    &#searchmusic{
+    	z-index:50;
+    	position: fixed;
+    	bottom:0;
+    }
+}
+
