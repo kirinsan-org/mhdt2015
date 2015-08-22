@@ -222,6 +222,7 @@ $cellColor : #FFF;
 
 	#control-skip ,
 	#control-prev ,
+	#control-playcue , 
 	#control-playpause {
 		position: absolute;
 		background-color: $themeColor;
@@ -229,11 +230,12 @@ $cellColor : #FFF;
  		background-size: cover;
 	}
 	
+
 	#control-skip ,#control-prev {
 		width:$defaultButtonSize;
 		height:$defaultButtonSize;
-		margin:0 $defaultButtonSize*-0.5;
 		border-radius:$defaultButtonSize;
+		margin:0 $defaultButtonSize*-0.5;
 		top:$defaultButtonSize*-1 - 20px;
 	}
 	#control-skip {
@@ -241,9 +243,18 @@ $cellColor : #FFF;
 		background-image: url(../images/ui_skip.png);
 	}
 	#control-prev {
-		
 		left:30%;
 		background-image: url(../images/ui_rewind.png);
+	}
+
+	#control-playcue {
+		$playcueButtonSize : $defaultButtonSize*0.8;
+		$position : ($barHeight - $playcueButtonSize)*0.5;
+		width:$playcueButtonSize;
+		height:$playcueButtonSize;
+		border-radius:$playcueButtonSize;
+		right:$position;
+		bottom:$position;
 	}
 	
 	#control-playpause {

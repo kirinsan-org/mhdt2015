@@ -13,6 +13,7 @@ $nearbyBarPadding:4px;
 $nearbyBarCellMargin:6px;
 
 @import '_player';
+@import '_playcue';
 
 body,html {
 	width:100%;
@@ -21,6 +22,7 @@ body,html {
 
 body {
 	background-color: #FFF;	
+	font-family:sans-serif;
 }
 
 .button {
@@ -44,6 +46,7 @@ body {
 
     &#playcue {
     	z-index:10;
+    	overflow:scroll;
     }
 }
 

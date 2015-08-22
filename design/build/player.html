@@ -66,6 +66,7 @@
 	<div id="control">
 		<div id="control-skip" class="button"></div>
 		<div id="control-prev" class="button"></div>
+		<div id="control-playcue" class="button"></div>
 		<div id="control-playpause" class="button">
 			<div class="beatball" style="animation-duration : 3s;"></div>
 		</div>
@@ -88,54 +89,59 @@
 <div class="container" id="playcue">
 	<ul id="playcue-list">
 		<li>
-			<div id="song-title">Wonderful Rush</div>
-			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div id="song-artists">μ's / ラブライブ!</div>
+			<div class="song-title">Wonderful Rush</div>
+			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div class="song-artists">μ's / ラブライブ!</div>
 		</li>
 		<li>
-			<div id="song-title">Wonderful Rush</div>
-			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div id="song-artists">μ's / ラブライブ!</div>
+			<div class="song-title">Wonderful Rush</div>
+			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div class="song-artists">μ's / ラブライブ!</div>
 		</li>
 		<li>
-			<div id="song-title">Wonderful Rush</div>
-			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div id="song-artists">μ's / ラブライブ!</div>
+			<div class="song-title">Wonderful Rush</div>
+			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div class="song-artists">μ's / ラブライブ!</div>
 		</li>
 		<li>
-			<div id="song-title">Wonderful Rush</div>
-			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div id="song-artists">μ's / ラブライブ!</div>
+			<div class="song-title">Wonderful Rush</div>
+			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div class="song-artists">μ's / ラブライブ!</div>
 		</li>
 		<li>
-			<div id="song-title">Wonderful Rush</div>
-			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div id="song-artists">μ's / ラブライブ!</div>
+			<div class="song-title">Wonderful Rush</div>
+			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div class="song-artists">μ's / ラブライブ!</div>
 		</li>
 		<li>
-			<div id="song-title">Wonderful Rush</div>
-			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div id="song-artists">μ's / ラブライブ!</div>
+			<div class="song-title">Wonderful Rush</div>
+			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div class="song-artists">μ's / ラブライブ!</div>
 		</li>
 		<li>
-			<div id="song-title">Wonderful Rush</div>
-			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div id="song-artists">μ's / ラブライブ!</div>
+			<div class="song-title">Wonderful Rush</div>
+			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div class="song-artists">μ's / ラブライブ!</div>
 		</li>
 		<li>
-			<div id="song-title">Wonderful Rush</div>
-			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div id="song-artists">μ's / ラブライブ!</div>
+			<div class="song-title">Wonderful Rush</div>
+			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div class="song-artists">μ's / ラブライブ!</div>
 		</li>
 		<li>
-			<div id="song-title">Wonderful Rush</div>
-			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div id="song-artists">μ's / ラブライブ!</div>
+			<div class="song-title">Wonderful Rush</div>
+			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div class="song-artists">μ's / ラブライブ!</div>
 		</li>
 		<li>
-			<div id="song-title">Wonderful Rush</div>
-			<div id="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div id="song-artists">μ's / ラブライブ!</div>
+			<div class="song-title">Wonderful Rush</div>
+			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div class="song-artists">μ's / ラブライブ!</div>
+		</li>
+		<li>
+			<div class="song-title">Wonderful Rush</div>
+			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+			<div class="song-artists">μ's / ラブライブ!</div>
 		</li>
 	</ul>
 </div>
@@ -144,6 +150,12 @@
 	$("#control-playpause").on("click",function(){
 		$(this).toggleClass("isPause");
 	})
+
+	$("#control-playcue").on("click",function(){
+		$(this).toggleClass("isOpened");
+		$("#player").toggleClass("playcue-opened");
+	})
+
 </script>
 
 
