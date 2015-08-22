@@ -49,5 +49,28 @@
             position: absolute;
             img {width:100%;}
         }
+
+        &:after{
+            content:"";
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            display: block;
+            background-size: contain;
+        }
+        
+        &.soundcloud:after{
+            background-image:url("../images/icon_soundcloud.png")
+        }
+        &.recochoku:after{
+            background-image:url("../images/icon_rekochoku.png")
+        }
+        &.spotify:after{
+            background-image:url("../images/icon_spotify.png")
+        }
+
     }
 }
