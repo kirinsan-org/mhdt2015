@@ -53,6 +53,33 @@ $cellColor : #FFF;
 	}
 }
 
+#nearby-handle {
+	$handleSize : 32px;
+	width:$handleSize;
+	height:$handleSize;
+	margin:$handleSize*-.5;
+	border-radius:$handleSize;
+	box-sizing: border-box;
+	border:1px solid #CCC;
+	background-color: rgba(0,0,0,0.7);
+	background-size: cover;	
+	background-image:url(../images/ui_moredata.png);
+	background-position: center top;
+	z-index:300;
+	position: absolute;
+	border-radius: 16px;
+    top: 70px;
+    right:32px;
+    
+    @include transition( all 0.5s ease-out);
+    
+    &.opened {
+    	background-position: center bottom;
+    	top: 97%;
+  	    right:50%;
+    }
+}
+
 #nearby-users {
 
 	$cellSize : $defaultButtonSize;
@@ -61,13 +88,21 @@ $cellColor : #FFF;
 	
 	position: absolute;
 	top:0;
-	z-index:20;
+	z-index:100;
 	padding:$padding;
 	letter-spacing:-0.5em;
 	background-color: rgba(0,0,0,0.5);
 	width:100%;
 	height:$cellSize + $margin*2;
 	overflow: hidden;
+	@include transition(height 0.5s ease-in-out 0s,background-color 0.5s ease-in-out 0s);
+	
+	&.opened {
+		height:100%;
+		background-color: rgba(0,0,0,0.8);
+		overflow:scroll
+
+	}
 
 	li {
 		width:$cellSize;
