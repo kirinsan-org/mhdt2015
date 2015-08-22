@@ -14,6 +14,7 @@ $nearbyBarCellMargin:6px;
 
 @import '_player';
 @import '_playcue';
+@import '_searchmusic';
 
 body,html {
 	width:100%;
@@ -46,7 +47,12 @@ body {
 
     &#playcue {
     	z-index:10;
-    	overflow:scroll;
+    }
+
+    &#searchmusic{
+    	z-index:50;
+    	position: fixed;
+    	bottom:0;
     }
 }
 

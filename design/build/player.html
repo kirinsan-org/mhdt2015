@@ -87,63 +87,77 @@
 </div>
 
 <div class="container" id="playcue">
-	<ul id="playcue-list">
-		<li>
-			<div class="song-title">Wonderful Rush</div>
-			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div class="song-artists">μ's / ラブライブ!</div>
-		</li>
-		<li>
-			<div class="song-title">Wonderful Rush</div>
-			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div class="song-artists">μ's / ラブライブ!</div>
-		</li>
-		<li>
-			<div class="song-title">Wonderful Rush</div>
-			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div class="song-artists">μ's / ラブライブ!</div>
-		</li>
-		<li>
-			<div class="song-title">Wonderful Rush</div>
-			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div class="song-artists">μ's / ラブライブ!</div>
-		</li>
-		<li>
-			<div class="song-title">Wonderful Rush</div>
-			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div class="song-artists">μ's / ラブライブ!</div>
-		</li>
-		<li>
-			<div class="song-title">Wonderful Rush</div>
-			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div class="song-artists">μ's / ラブライブ!</div>
-		</li>
-		<li>
-			<div class="song-title">Wonderful Rush</div>
-			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div class="song-artists">μ's / ラブライブ!</div>
-		</li>
-		<li>
-			<div class="song-title">Wonderful Rush</div>
-			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div class="song-artists">μ's / ラブライブ!</div>
-		</li>
-		<li>
-			<div class="song-title">Wonderful Rush</div>
-			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div class="song-artists">μ's / ラブライブ!</div>
-		</li>
-		<li>
-			<div class="song-title">Wonderful Rush</div>
-			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div class="song-artists">μ's / ラブライブ!</div>
-		</li>
-		<li>
-			<div class="song-title">Wonderful Rush</div>
-			<div class="song-album-title">Wonderful Rush (Hi-res)</div>
-			<div class="song-artists">μ's / ラブライブ!</div>
-		</li>
-	</ul>
+	<div id="playcue-inside">
+		<ul id="playcue-list">
+			<li>
+				<div class="song-title">Wonderful Rush</div>
+				<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+				<div class="song-artists">μ's / ラブライブ!</div>
+			</li>
+			<li>
+				<div class="song-title">Wonderful Rush</div>
+				<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+				<div class="song-artists">μ's / ラブライブ!</div>
+			</li>
+			<li>
+				<div class="song-title">Wonderful Rush</div>
+				<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+				<div class="song-artists">μ's / ラブライブ!</div>
+			</li>
+			<li>
+				<div class="song-title">Wonderful Rush</div>
+				<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+				<div class="song-artists">μ's / ラブライブ!</div>
+			</li>
+			<li>
+				<div class="song-title">Wonderful Rush</div>
+				<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+				<div class="song-artists">μ's / ラブライブ!</div>
+			</li>
+			<li>
+				<div class="song-title">Wonderful Rush</div>
+				<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+				<div class="song-artists">μ's / ラブライブ!</div>
+			</li>
+			<li>
+				<div class="song-title">Wonderful Rush</div>
+				<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+				<div class="song-artists">μ's / ラブライブ!</div>
+			</li>
+			<li>
+				<div class="song-title">Wonderful Rush</div>
+				<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+				<div class="song-artists">μ's / ラブライブ!</div>
+			</li>
+			<li>
+				<div class="song-title">Wonderful Rush</div>
+				<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+				<div class="song-artists">μ's / ラブライブ!</div>
+			</li>
+			<li>
+				<div class="song-title">Wonderful Rush</div>
+				<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+				<div class="song-artists">μ's / ラブライブ!</div>
+			</li>
+			<li>
+				<div class="song-title">Wonderful Rush</div>
+				<div class="song-album-title">Wonderful Rush (Hi-res)</div>
+				<div class="song-artists">μ's / ラブライブ!</div>
+			</li>
+		</ul>
+	</div>
+	<div id="playcue-addmusic"></div>
+</div>
+
+<div class="container" id="searchmusic">
+	<div id="searchmusic-form">
+		<form id="search-form-body"><input type="search" id="search-form-input"></form>
+	</div>
+	<div id="searchmusic-container">
+		<ul id="searchmusic-list">
+			
+		</ul>
+	</div>
 </div>
 
 <script>
@@ -156,6 +170,31 @@
 		$("#player").toggleClass("playcue-opened");
 	})
 
+	$("#playcue-addmusic").on("click",function(){
+		$("#searchmusic").toggleClass("searchmusic-opened");
+	});
+
+
+	
+
+	$("#search-form-body").on({"submit":function(){
+		var val = $("#search-form-input").val();
+		console.log(val);
+		$.ajax({
+		  type: 'GET',
+		  url: 'http://172.16.200.170:8888/search',
+		  data: {q: val},
+		  dataType: 'json',
+		  success: function(json){
+		    $("#searchmusic-list").empty();
+			$.each(json.results,function(i){
+				var $li = $("<li />").addClass(this.source).html('<div class="song-artwork"><img src="'+this.image+'"></div><div class="song-title">'+this.title+'</div><div class="song-artists">'+this.artist+'</div>')
+				$("#searchmusic-list").append($li);
+			});
+		  }
+		});
+		return false;
+	}});
 </script>
 
 

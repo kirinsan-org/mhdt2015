@@ -255,6 +255,10 @@ $cellColor : #FFF;
 		border-radius:$playcueButtonSize;
 		right:$position;
 		bottom:$position;
+		background-image: url(../images/ui_cuelist.png);
+		&.isOpened{
+			background-position:center bottom;
+		}
 	}
 	
 	#control-playpause {
@@ -315,16 +319,21 @@ $cellColor : #FFF;
 	@include transition(opacity 0.5s ease-in-out 0s);
 }
 
-.container {
+#artwork {
+	@include transform(translate3d(0, 0, 0));
+}
+
+.container{
+	@include transform(translate3d(0, 0, 0));
 	$timelineWidth: 2px;
 	$barHeight : $defaultButtonSize + $nearbyBarPadding + $nearbyBarCellMargin + $timelineWidth;
 	position: relative;
 	@include transition(height 0.3s ease-in-out 0s);
 	&.playcue-opened {
 		height:$barHeight;
-		
 		#control {}
 		#nearby , #artwork {
+			@include transform(translate3d(0, 0, 0));
 			opacity:0;
 		}
 	}

@@ -1,8 +1,28 @@
+#playcue-inside{
+	overflow:scroll;
+	width:100%;
+	height:100%;
+}
+
+#playcue-addmusic {
+	$buttonSize: 64px;
+	width:$buttonSize;
+	height:$buttonSize;
+	border-radius:$buttonSize;
+	position: absolute;
+	background-color: $themeColor;
+	background-position:center top;
+	background-size: cover;
+	background-image:url(../images/ui_addmusic.png);
+	z-index:20;
+	bottom: 8px;
+    right: 8px;
+}
+
 #playcue-list{
-	
 	padding-top:60px;
-	
 	background-color:#666;
+	
 	
 	li {
 		display: block;
@@ -11,8 +31,8 @@
 		border-bottom:1px solid rgba(255,255,255,0.5);
 		line-height:1.1em;
 		font-size:15px;
+    	
 		.song-title {}
-
 		.song-album-title ,
 		.song-artists {font-size:11px;}
 		.song-album-title {}
