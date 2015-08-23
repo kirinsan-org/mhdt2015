@@ -2,6 +2,7 @@ var express = require('express');
 var cors = require('cors');
 var app = express();
 var credentials = require('./credentials.json');
+var sns = require('./sns.js');
 
 app.use(cors());
 
@@ -49,33 +50,51 @@ app.get('/details', function(req, res, next) {
   }, next)
 })
 
+app.get('/registerAPNS', function(req, res, next) {
 
-// var db = require('./db.js');
-// // 位置情報を登録
-// /**
-//  * userId
-//  * lat
-//  * lng
-//  */
-// app.get('/location', function(req, res, next) {
+  sns.registerAPNS(req.query.token)
+    .then(function(result) {
+      res.json(result);
+    }, next);
 
-//   var userId = req.query.userId;
-//   var lat = req.query.lat;
-//   var lng = req.query.lat;
+})
 
-//   if (!userId || !lat || !lng) return next();
+app.get('/registerGCM', function(req, res, next) {
 
-//   db.User.findByIdAndUpdate(userId, {
-//       lat: lat,
-//       lng: lng
-//     }, {
-//       upsert: true
-//     }).exec()
-//     .then(function(result) {
-//       res.json(result);
-//     });
+  sns.registerGCM(req.query.token)
+    .then(function(result) {
+      res.json(result);
+    }, next);
 
-// });
+})
+
+app.get('/listArn', function(req, res, next) {
+
+  sns.listArn()
+    .then(function(result) {
+      res.json(result.Subscriptions.map(function(i) {
+        return i.Endpoint
+      }));
+    }, next);
+
+})
+
+app.get('/broadcast', function(req, res, next) {
+  sns.broadcast({
+    id: req.query.id,
+    title: req.query.title,
+    image: req.query.image,
+    artist: req.query.artist,
+    url: req.query.url,
+    source: req.query.source
+  }, {
+    arn: req.query.arn,
+    avator: req.query.avator
+  }).then(function(result) {
+    res.json(result);
+  }, next);
+
+})
 
 app.listen(8888, function() {
   console.log('Started');
