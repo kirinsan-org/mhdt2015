@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "arn": "arn:aws:sns:ap-northeast-1:719986071946:HenshinComitter-MainTopic:7a3d184a-b109-44f7-908a-c3c5a145c679",
+      "avator": "http://api.adorable.io/avatars/96/abott@adorable.png",
+      "playing": {
+        "id": "7x8dCjCr0x6x2lXKujYD34",
+        "title": "The Pretender",
+        "image": "https://i.scdn.co/image/73444b48291398066d45c2832d7c672e44b1a8d7",
+        "artist": "Foo Fighters",
+        "url": "https://p.scdn.co/mp3-preview/d3b0c09d22f6b9685345c10a347ef2624413fb85",
+        "source": "spotify"
+      }
+    },
+    {
+      "arn": "arn:aws:sns:ap-northeast-1:719986071946:HenshinComitter-MainTopic:d08d8112-cf22-45a6-8c32-221f5a36d132",
+      "avator": "http://api.adorable.io/avatars/96/jhfuk@adorable.png",
+      "playing": {
+        "id": "6BAnxKyld909yo6Pk1DO3r",
+        "title": "Hello",
+        "image": "https://i.scdn.co/image/3fb93327645a400d5b31479f313f90b7a2b418fc",
+        "artist": "OMFG",
+        "url": "https://p.scdn.co/mp3-preview/66d045242d00f6c6cdd74c290a6d35d4b24724df",
+        "source": "spotify"
+      }
+    },
+    {
+      "arn": "arn:aws:sns:ap-northeast-1:719986071946:HenshinComitter-MainTopic:f816ce20-f7b2-44ac-b9cb-8677cffc58b7",
+      "avator": "http://api.adorable.io/avatars/96/yuymt@adorable.png",
+      "playing": {
+        "id": "2LcB304HDrCx8WVDEQn7CK",
+        "title": "Good For You",
+        "image": "https://i.scdn.co/image/e8e13e0da472ccf3275b8ec86d03bd8f78801459",
+        "artist": "Selena Gomez",
+        "url": "https://p.scdn.co/mp3-preview/c7c1b0c8731a326d3dddea63f4c77dec567f69c5",
+        "source": "spotify"
+      }
+    },
+    {
+      "arn": "arn:aws:sns:ap-northeast-1:719986071946:HenshinComitter-MainTopic:2b59c277-79c4-46cd-affc-ff0459427572",
+      "avator": "http://api.adorable.io/avatars/96/niund@adorable.png",
+      "playing": {
+        "id": "1lzsinBndAV7ujua5tn7om",
+        "title": "Ready",
+        "image": "https://i.scdn.co/image/11ff2c227d351f98b1d97851fc487bd567daa1c6",
+        "artist": "Vigiland",
+        "url": "https://p.scdn.co/mp3-preview/bb0bdf4db5d41477006b320c018f35a88ef5425a",
+        "source": "spotify"
+      }
+    },
+    {
+      "arn": "arn:aws:sns:ap-northeast-1:719986071946:HenshinComitter-MainTopic:49c8a297-12a8-4b87-91e2-5157e6c79d7b",
+      "avator": "http://api.adorable.io/avatars/96/godss@adorable.png",
+      "playing": {
+        "id": "1LHZMWefF9502NPfArRfvP",
+        "title": "Lift Me Up (feat. Rob Halford of Judas Priest)",
+        "image": "https://i.scdn.co/image/07eaba0ac7f8a453e5a1e22bf161a6a1667abb9f",
+        "artist": "Five Finger Death Punch",
+        "url": "https://p.scdn.co/mp3-preview/d356516898c718786a5d008ae7cd8c5bc6fbfa02",
+        "source": "spotify"
+      }
+    }
+  ]
+}
