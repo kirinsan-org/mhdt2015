@@ -80,17 +80,25 @@ app.get('/listArn', function(req, res, next) {
 })
 
 app.get('/broadcast', function(req, res, next) {
-  sns.broadcast({
+
+  var track = {
     id: req.query.id,
     title: req.query.title,
     image: req.query.image,
     artist: req.query.artist,
     url: req.query.url,
-    source: req.query.source
-  }, {
+    source: req.query.source,
+    force: req.query.force
+  };
+
+  var from = {
     arn: req.query.arn,
     avator: req.query.avator
-  }).then(function(result) {
+  };
+
+  console.log(track, from);
+
+  sns.broadcast(track, from).then(function(result) {
     res.json(result);
   }, next);
 

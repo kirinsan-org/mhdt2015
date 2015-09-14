@@ -61,7 +61,10 @@ module.exports = {
     return sns.publish({
       Message: JSON.stringify({
         'default': 'This is default Message!',
-        'APNS': JSON.stringify({
+        'APNS_SANDBOX': JSON.stringify({
+          aps: {
+            alert: 'Message received from Bob'
+          },
           track: track,
           from: from
         }),
