@@ -6,10 +6,10 @@ var sns = require('./sns.js');
 
 app.use(cors());
 
-var Spotify = require('./Spotify.js');
-var Recochoku = require('./Recochoku.js');
+// var Spotify = require('./Spotify.js');
+// var Recochoku = require('./Recochoku.js');
 var SoundCloud = require('./SoundCloud.js');
-var Gracenote = require('./Gracenote.js');
+// var Gracenote = require('./Gracenote.js');
 
 app.use(express.static(__dirname + '/public'));
 
@@ -17,24 +17,28 @@ app.get('/search', function(req, res, next) {
 
   var promises = [
 
-    Spotify.search(req.query.q),
-    SoundCloud.search(req.query.q),
-    Recochoku.search(req.query.q)
-
+    // Spotify.search(req.query.q),
+    SoundCloud.search(req.query.q)
+    // Recochoku.search(req.query.q)
   ];
 
   Promise.all(promises).then(function(data) {
 
-    var spotify = convertSpotify(data[0]);
-    var soundcloud = convertSoundCloud(data[1]);
-    var recochoku = convertRecochoku(data[2]);
+    // var spotify = convertSpotify(data[0]);
+    var soundcloud = convertSoundCloud(data[0]);
+    // var recochoku = convertRecochoku(data[2]);
 
-    var array = spotify.results
-      .concat(soundcloud.results)
-      .concat(recochoku.results)
-      .filter(function(item) {
-        return item.url && item.image
-      });
+    // var array = spotify.results
+    //   .concat(soundcloud.results)
+    //   .concat(recochoku.results)
+    //   .filter(function(item) {
+    //     return item.url && item.image
+    //   });
+
+    // SoundCloud only
+    var array = soundcloud.results.filter(function(item) {
+      return item.url && item.image
+    });;
 
     res.json({
       results: array
